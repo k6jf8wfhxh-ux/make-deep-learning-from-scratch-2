@@ -65,7 +65,6 @@ class AttentionDecoder:
         dh = self.lstm.dh
         denc_hs[:, -1] += dh
         self.embed.backward(dout)
-
         return denc_hs
 
     def generate(self, enc_hs, start_id, sample_size):
